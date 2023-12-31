@@ -1,0 +1,34 @@
+-- Official docs: https://www.postgresql.org/docs/12/app-psql.html
+
+-- Don't display the "helpful" message on startup.
+\set QUIET 1
+
+\set ECHO_HIDDEN
+\pset null '[NULL]'
+
+\set PROMPT1 '%M:%/%R%#%x '
+\set PROMPT2 '[%~]%R# '
+
+--\set AUTOCOMMIT off
+\timing on
+\x auto
+
+\set HISTCONTROL ignorespace
+\set HISTCONTROL ignoredups
+
+\set HISTSIZE 2000
+
+--\pset pager off
+--\setenv PAGER 'less -S'
+--\o | sed -r 's/\\x1B\[([0-9]+)m/\x1B[\1m/g' | less -R
+\set ON_ERROR_ROLLBACK interactive
+\set COMP_KEYWORD_CASE upper
+
+-- Set field separator to ',' for CSV format output when using \o filename.csv
+--\pset \f ','
+
+\set VERBOSITY verbose
+
+\unset QUIET
+\set ECHO queries
+\echo 'AUTOCOMMIT mode: ':AUTOCOMMIT
