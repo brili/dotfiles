@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bashrc .gitconfig .psqlrc .wgetrc .vimrc .vim .zshrc .oh-my-zsh"    # list of files/folders to symlink in homedir
+files=".bashrc .gitconfig .psqlrc .wgetrc .vimrc .vim .zshrc .oh-my-zsh .pam_environment"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -29,12 +29,6 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/$file
 done
-
-envdir=.config/environment.d
-envvars=$envdir/envvars.conf
-mkdir -p $olddir/$envdir
-mv ~/$envvars ~/dotfiles_old/$envvars
-ln -s $dir/$envvars ~/$envvars
 
 echo "Applying .crontab"
 crontab .crontab
