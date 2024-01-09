@@ -34,7 +34,7 @@ envdir=.config/environment.d
 envvars=$envdir/envvars.conf
 mkdir -p $olddir/$envdir
 mv ~/$envvars ~/dotfiles_old/$envvars
-ln -s $envvars ~/$envvars
+ln -s $dir/$envvars ~/$envvars
 
 echo "Applying .crontab"
 crontab .crontab
