@@ -3,7 +3,7 @@
 ## Create symlinks
 
 ```
-chmod +x make.sh
-./make.sh
+$ chmod +x make.sh
+$ sh make.sh
 
 ```
